@@ -30,7 +30,7 @@ import { useState } from "react";
 // import { expandedMenu, setExpandedMenu } from "../page";
 
 export const menuItems = [
-  { icon: Home, label: "Home", hasSubmenu: true },
+  { icon: Home, homeLink:true, label: "Home", hasSubmenu: true },
   { icon: Users, label: "Students", hasSubmenu: true },
   {
     icon: GraduationCap,
@@ -52,9 +52,9 @@ export const menuItems = [
 ];
 
 export default function Navbar() {
-  const [expandedMenu, setExpandedMenu] = useState<string>("Teachers");
+  // const [expandedMenu, setExpandedMenu] = useState<string>("Teachers");
   return (
-    <aside className="w-64 bg-card border-r border-border flex flex-col font-dmSans tracking-tight">
+    <aside className="w-64 bg-card border-r border-border flex flex-col font-dmSans tracking-tight absolute z-10">
       {/* Sidebar */}
       {/* Logo */}
       <div className="p-6 flex items-center gap-2">
@@ -68,11 +68,8 @@ export default function Navbar() {
       <nav className="flex-1 px-4 space-y-1">
         {menuItems.map((item) => (
           <div key={item.label}>
-            <Link href={`/${item.label.toLowerCase()}`}
-              onClick={() =>
-                item.hasSubmenu &&
-                setExpandedMenu(expandedMenu === item.label ? "" : item.label)
-              }
+            <Link href={item.homeLink?"/admin/":`/admin/${item.label.toLowerCase()}`}
+              
               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 item.active
                   ? "text-primary"
@@ -90,7 +87,7 @@ export default function Navbar() {
                   <ChevronDown className="w-4 h-4" />
                 ))} */}
             </Link>
-            {item.submenu && expandedMenu === item.label && (
+            {/* {item.submenu && expandedMenu === item.label && (
               <div className="ml-11 mt-1 space-y-1">
                 {item.submenu.map((sub, idx) => (
                   <button
@@ -105,7 +102,7 @@ export default function Navbar() {
                   </button>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </nav>
