@@ -1,34 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Calendar,
-  Bell,
-  ChevronDown,
-  Search,
-  MessageSquare,
-  Plus,
-  Trash2,
-  Link2,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
+
+import { students } from "@/app/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+
+import { Bell, Calendar, ChevronDown, ChevronLeft, ChevronRight, Link2, MessageSquare, Plus, Search, Trash2 } from "lucide-react";
 import Link from "next/link";
-import { teachers } from "@/app/data";
 
-export default function Index() {
-  const [selectedTeachers, setSelectedTeachers] = useState<string[]>([]);
-
-  const toggleTeacher = (id: string) => {
-    setSelectedTeachers((prev) =>
-      prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]
-    );
-  };
-
+export default function StudentsPage() {
+      const [selectedStudents, setSelectedStudents] = useState<string[]>([]);
+    
+      const toggleStudent = (id: string) => {
+        setSelectedStudents((prev) =>
+          prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+        );
+      };
   return (
     <div className="flex min-h-screen bg-background border font-dmSans tracking-tight">
       {/* Main Content */}
@@ -50,7 +40,7 @@ export default function Index() {
               <MessageSquare className="w-5 h-5 text-muted-foreground" />
             </button>
             <div className="flex items-center gap-3 pl-4 border-l border-border">
-              <Avatar className="w-9 h-9">
+              <Avatar className="w-9 h-9 rounded-full overflow-hidden">
                 <AvatarImage src="https://i.pravatar.cc/150?img=32" />
                 <AvatarFallback>PL</AvatarFallback>
               </Avatar>
@@ -69,26 +59,26 @@ export default function Index() {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-2xl font-semibold text-foreground">
-                All Teachers
+                All Students
               </h1>
               <div className="flex items-center gap-2 mt-1 text-sm">
                 <span className="text-muted-foreground">Home</span>
                 <span className="text-muted-foreground">/</span>
-                <span className="text-primary">Teachers</span>
+                <span className="text-primary">Students</span>
               </div>
             </div>
             <Button className="gap-2">
               <Plus className="w-4 h-4" />
-              Add Teacher
+              Add Student
             </Button>
           </div>
 
-          {/* Teachers Table Card */}
+          {/* students Table Card */}
           <div className="bg-card rounded-xl border border-border">
             {/* Table Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
               <h2 className="text-lg font-semibold text-foreground">
-                Teachers Information
+                Students Information
               </h2>
               <div className="flex items-center gap-3">
                 <div className="relative">
@@ -113,33 +103,33 @@ export default function Index() {
                   <tr className="border-b border-border">
                     <th className="p-4 text-left">
                       <Checkbox
-                        checked={selectedTeachers.length === teachers.length}
+                        checked={selectedStudents.length === students.length}
                         onCheckedChange={() =>
-                          setSelectedTeachers(
-                            selectedTeachers.length === teachers.length
+                          setSelectedStudents(
+                            selectedStudents.length === students.length
                               ? []
-                              : teachers.map((t) => t.id)
+                              : students.map((s) => s.id)
                           )
                         }
                       />
                     </th>
                     <th className="p-4 text-left text-sm font-medium text-muted-foreground">
-                      Teachers Name
+                      Students Name
                     </th>
                     <th className="p-4 text-left text-sm font-medium text-muted-foreground">
                       Id
                     </th>
                     <th className="p-4 text-left text-sm font-medium text-muted-foreground">
-                      Address
-                    </th>
-                    <th className="p-4 text-left text-sm font-medium text-muted-foreground">
-                      Subject
-                    </th>
-                    <th className="p-4 text-left text-sm font-medium text-muted-foreground">
                       Class
                     </th>
                     <th className="p-4 text-left text-sm font-medium text-muted-foreground">
-                      Phone
+                      Gender
+                    </th>
+                    <th className="p-4 text-left text-sm font-medium text-muted-foreground">
+                      Parent Phone
+                    </th>
+                    <th className="p-4 text-left text-sm font-medium text-muted-foreground">
+                      Term Avg
                     </th>
                     <th className="p-4 text-left text-sm font-medium text-muted-foreground">
                       Action
@@ -147,51 +137,51 @@ export default function Index() {
                   </tr>
                 </thead>
                 <tbody>
-                  {teachers.map((teacher) => (
+                  {students.map((student) => (
                     <tr
-                      key={teacher.id}
+                      key={student.id}
                       className={`border-b border-border last:border-0 transition-colors ${
-                        selectedTeachers.includes(teacher.id)
+                        selectedStudents.includes(student.id)
                           ? "bg-secondary/50"
                           : "hover:bg-muted/50"
                       }`}
                     >
                       <td className="p-4">
                         <Checkbox
-                          checked={selectedTeachers.includes(teacher.id)}
-                          onCheckedChange={() => toggleTeacher(teacher.id)}
+                          checked={selectedStudents.includes(student.id)}
+                          onCheckedChange={() => toggleStudent(student.id)}
                         />
                       </td>
                       <td className="p-4">
                         <Link
-                          href={`/admin/teachers/${teacher.id}`}
+                          href={`/admin/students/${student.id}`}
                           className="flex items-center gap-3 hover:bg-neutral-100 w-fit py-2 px-3 rounded-md duration-300"
                         >
-                          <Avatar className="w-9 h-9">
-                            <AvatarImage src={teacher.avatar} />
+                          <Avatar className="w-9 h-9 rounded-full overflow-hidden">
+                            <AvatarImage src={student.image} />
                             <AvatarFallback>
-                              {teacher.name.charAt(0)}
+                              {student.name.charAt(0)}
                             </AvatarFallback>
                           </Avatar>
                           <span className="font-medium text-foreground">
-                            {teacher.name}
+                            {student.name}
                           </span>
                         </Link>
                       </td>
                       <td className="p-4 text-sm text-muted-foreground">
-                        {teacher.id}
+                        {student.id}
                       </td>
                       <td className="p-4 text-sm text-muted-foreground">
-                        {teacher.address}
+                        {student.class}
                       </td>
                       <td className="p-4 text-sm text-foreground">
-                        {teacher.subject}
+                        {student.gender}
                       </td>
                       <td className="p-4 text-sm text-foreground">
-                        {teacher.gender}
+                        {student.parent_phone}
                       </td>
                       <td className="p-4 text-sm text-foreground">
-                        {teacher.phone}
+                        {student.term_average}%
                       </td>
                       <td className="p-4">
                         <div className="flex items-center gap-2">
