@@ -30,7 +30,7 @@ export default function Index() {
   };
 
   return (
-    <div className="flex min-h-screen bg-background border font-dmSans tracking-tight">
+    <div className="flex min-h-screen border font-dmSans tracking-tight">
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
@@ -39,14 +39,14 @@ export default function Index() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               placeholder="What do you want to find?"
-              className="pl-10 bg-background border-border"
+              className="pl-10 border-border"
             />
           </div>
           <div className="flex items-center gap-4">
-            <button className="p-2 rounded-lg hover:bg-muted transition-colors">
+            <button className="p-2 rounded-lg hover:bg-muted transition-colors duration-300">
               <Bell className="w-5 h-5 text-muted-foreground" />
             </button>
-            <button className="p-2 rounded-lg hover:bg-muted transition-colors">
+            <button className="p-2 rounded-lg hover:bg-muted transition-colors duration-300">
               <MessageSquare className="w-5 h-5 text-muted-foreground" />
             </button>
             <div className="flex items-center gap-3 pl-4 border-l border-border">
@@ -55,7 +55,7 @@ export default function Index() {
                 <AvatarFallback>PL</AvatarFallback>
               </Avatar>
               <div className="text-sm">
-                <p className="font-medium text-foreground">Priscilla Lily</p>
+                <p className="font-medium">Dorcas Midalla</p>
                 <p className="text-xs text-muted-foreground">Admin</p>
               </div>
               <ChevronDown className="w-4 h-4 text-muted-foreground" />
@@ -68,7 +68,7 @@ export default function Index() {
           {/* Page Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-semibold text-foreground">
+              <h1 className="text-2xl font-semibold">
                 All Teachers
               </h1>
               <div className="flex items-center gap-2 mt-1 text-sm">
@@ -77,7 +77,7 @@ export default function Index() {
                 <span className="text-primary">Teachers</span>
               </div>
             </div>
-            <Button className="gap-2">
+            <Button className="gap-2 border-2 text-blue-950 bg-white border-blue-950 hover:bg-blue-950 hover:text-white font-semibold">
               <Plus className="w-4 h-4" />
               Add Teacher
             </Button>
@@ -87,7 +87,7 @@ export default function Index() {
           <div className="bg-card rounded-xl border border-border">
             {/* Table Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
-              <h2 className="text-lg font-semibold text-foreground">
+              <h2 className="text-lg font-semibold">
                 Teachers Information
               </h2>
               <div className="flex items-center gap-3">
@@ -95,7 +95,7 @@ export default function Index() {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
                     placeholder="Search by name or roll"
-                    className="pl-10 w-56 bg-background"
+                    className="pl-10 w-56"
                   />
                 </div>
                 <Button variant="outline" className="gap-2">
@@ -150,7 +150,7 @@ export default function Index() {
                   {teachers.map((teacher) => (
                     <tr
                       key={teacher.id}
-                      className={`border-b border-border last:border-0 transition-colors ${
+                      className={`border-b border-border last:border-0 transition-colors duration-300 ${
                         selectedTeachers.includes(teacher.id)
                           ? "bg-secondary/50"
                           : "hover:bg-muted/50"
@@ -162,7 +162,7 @@ export default function Index() {
                           onCheckedChange={() => toggleTeacher(teacher.id)}
                         />
                       </td>
-                      <td className="p-4">
+                      <td>
                         <Link
                           href={`/admin/teachers/${teacher.id}`}
                           className="flex items-center gap-3 hover:bg-neutral-100 w-fit py-2 px-3 rounded-md duration-300"
@@ -173,7 +173,7 @@ export default function Index() {
                               {teacher.name.charAt(0)}
                             </AvatarFallback>
                           </Avatar>
-                          <span className="font-medium text-foreground">
+                          <span className="font-medium">
                             {teacher.name}
                           </span>
                         </Link>
@@ -184,21 +184,21 @@ export default function Index() {
                       <td className="p-4 text-sm text-muted-foreground">
                         {teacher.address}
                       </td>
-                      <td className="p-4 text-sm text-foreground">
+                      <td className="p-4 text-sm">
                         {teacher.subject}
                       </td>
-                      <td className="p-4 text-sm text-foreground">
+                      <td className="p-4 text-sm">
                         {teacher.gender}
                       </td>
-                      <td className="p-4 text-sm text-foreground">
+                      <td className="p-4 text-sm">
                         {teacher.phone}
                       </td>
                       <td className="p-4">
                         <div className="flex items-center gap-2">
-                          <button className="p-1.5 rounded hover:bg-muted transition-colors">
+                          <button className="p-1.5 rounded hover:bg-muted transition-colors duration-300">
                             <Trash2 className="w-4 h-4 text-muted-foreground" />
                           </button>
-                          <button className="p-1.5 rounded hover:bg-muted transition-colors">
+                          <button className="p-1.5 rounded hover:bg-muted transition-colors duration-300">
                             <Link2 className="w-4 h-4 text-muted-foreground" />
                           </button>
                         </div>
@@ -210,36 +210,36 @@ export default function Index() {
             </div>
 
             {/* Pagination */}
-            <div className="flex items-center justify-center gap-2 p-4 border-t border-border">
-              <button className="p-2 rounded-lg hover:bg-muted transition-colors">
+            <div className="flex items-center justify-center gap-2 p-4 border-t border-border font-medium">
+              {/* <button className="p-2 rounded-lg hover:bg-muted transition-colors duration-300">
                 <ChevronLeft className="w-4 h-4 text-muted-foreground" />
-              </button>
-              <button className="w-8 h-8 rounded-lg text-sm bg-primary text-primary-foreground">
+              </button> */}
+              <button className="w-8 h-8 rounded-lg text-sm bg-blue-950 text-white transition-colors duration-300">
                 1
               </button>
-              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors">
+              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors duration-300">
                 2
               </button>
-              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors">
+              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors duration-300">
                 3
               </button>
-              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors">
+              {/* <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors duration-300">
                 4
               </button>
-              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors">
+              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors duration-300">
                 5
-              </button>
-              <span className="text-muted-foreground">...</span>
-              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors">
+              </button> */}
+              {/* <span className="text-muted-foreground">...</span>
+              <button className="w-8 h-8 rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors duration-300">
                 100
-              </button>
-              <button className="p-2 rounded-lg hover:bg-muted transition-colors">
+              </button> */}
+              {/* <button className="p-2 rounded-lg hover:bg-muted transition-colors duration-300">
                 <ChevronRight className="w-4 h-4 text-muted-foreground" />
-              </button>
-              <Button variant="outline" size="sm" className="ml-4 gap-1">
+              </button> */}
+              {/* <Button variant="outline" size="sm" className="ml-4 gap-1">
                 10 / page
                 <ChevronDown className="w-3 h-3" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </main>

@@ -102,7 +102,7 @@ export const teachers = [
 
 export const students = [
   {
-    id: "SCH/2026/001",
+    id: "SCH-2026-001",
     name: "Chukwudi Adebayo",
     image: "https://i.pravatar.cc/150?u=nig001",
     class: "SSS 3",
@@ -118,7 +118,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/002",
+    id: "SCH-2026-002",
     name: "Amina Abubakar",
     image: "https://i.pravatar.cc/150?u=nig002",
     class: "SSS 2",
@@ -134,7 +134,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/003",
+    id: "SCH-2026-003",
     name: "Oluwaseun Balogun",
     image: "https://i.pravatar.cc/150?u=nig003",
     class: "Primary 5",
@@ -150,7 +150,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/004",
+    id: "SCH-2026-004",
     name: "Nneka Okoro",
     image: "https://i.pravatar.cc/150?u=nig004",
     class: "JSS 2",
@@ -166,7 +166,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/005",
+    id: "SCH-2026-005",
     name: "Tunde Bakare",
     image: "https://i.pravatar.cc/150?u=nig005",
     class: "SSS 1",
@@ -182,7 +182,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/006",
+    id: "SCH-2026-006",
     name: "Fatima Umar",
     image: "https://i.pravatar.cc/150?u=nig006",
     class: "Primary 2",
@@ -198,7 +198,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/007",
+    id: "SCH-2026-007",
     name: "Ibrahim Danjuma",
     image: "https://i.pravatar.cc/150?u=nig007",
     class: "JSS 3",
@@ -214,7 +214,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/008",
+    id: "SCH-2026-008",
     name: "Efe Omoware",
     image: "https://i.pravatar.cc/150?u=nig008",
     class: "SSS 3",
@@ -230,7 +230,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/009",
+    id: "SCH-2026-009",
     name: "Zainab Yusuf",
     image: "https://i.pravatar.cc/150?u=nig009",
     class: "Primary 6",
@@ -246,7 +246,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/010",
+    id: "SCH-2026-010",
     name: "Kelechi Nnamdi",
     image: "https://i.pravatar.cc/150?u=nig010",
     class: "JSS 1",
@@ -262,7 +262,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/011",
+    id: "SCH-2026-011",
     name: "Funmi Ajayi",
     image: "https://i.pravatar.cc/150?u=nig011",
     class: "Primary 4",
@@ -278,7 +278,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/012",
+    id: "SCH-2026-012",
     name: "Umar Farouq",
     image: "https://i.pravatar.cc/150?u=nig012",
     class: "SSS 2",
@@ -294,7 +294,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/013",
+    id: "SCH-2026-013",
     name: "Blessing Etim",
     image: "https://i.pravatar.cc/150?u=nig013",
     class: "Primary 3",
@@ -310,7 +310,7 @@ export const students = [
     // status: "Day Student",
   },
   {
-    id: "SCH/2026/014",
+    id: "SCH-2026-014",
     name: "Damilola Oke",
     image: "https://i.pravatar.cc/150?u=nig014",
     class: "SSS 1",
@@ -326,7 +326,7 @@ export const students = [
     // status: "Boarding",
   },
   {
-    id: "SCH/2026/015",
+    id: "SCH-2026-015",
     name: "Chiamaka Eze",
     image: "https://i.pravatar.cc/150?u=nig015",
     class: "JSS 3",
