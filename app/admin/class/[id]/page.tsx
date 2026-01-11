@@ -57,7 +57,7 @@ export default async function SingleClass({
                 <span className="text-primary">Exams</span>
               </div>
             </div>
-            <Button className="gap-2 border-2 text-blue-950 bg-white border-blue-950 hover:bg-blue-950 hover:text-white font-semibold">
+            <Button className="gap-2 border-2 font-semibold">
               <Plus className="w-4 h-4" />
               Add Exam
             </Button>

@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function AddStudent() {
   const [gender, setGender] = useState(true);
   return (
-    <div className="flex min-h-screen border font-dmSans tracking-tight bg-[#F5F4F9]">
+    <div className="flex min-h-screen border font-dmSans tracking-tight">
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
@@ -55,7 +55,7 @@ export default function AddStudent() {
                 <span className="text-primary">Student</span>
               </div>
             </div>
-            <Button className="gap-2 border-2 text-blue-950 bg-white border-blue-950 hover:bg-blue-950 hover:text-white font-semibold">
+            <Button className="gap-2 border-2 font-semibold">
               <Plus className="w-4 h-4" />
               Save
             </Button>
@@ -65,7 +65,7 @@ export default function AddStudent() {
           <section className="flex gap-4 font-medium">
             {/* left */}
             <section className="flex flex-col gap-4 flex-1">
-              <div className="rounded-xl bg-white border w-full p-4 flex flex-col gap-2">
+              <div className="rounded-xl bg-card border w-full p-4 flex flex-col gap-2">
                 <p>Basic Information</p>
                 <div className="bg-neutral-300 h-0.5 rounded-full" />
                 <div className="flex flex-col gap-4 text-sm">
@@ -102,7 +102,7 @@ export default function AddStudent() {
                   {/* right */}
                 </div>
               </div>
-              <div className="rounded-xl bg-white border w-full p-4 flex flex-col gap-2">
+              <div className="rounded-xl bg-card border w-full p-4 flex flex-col gap-2">
                 <p>Parent Details</p>
                 <div className="bg-neutral-300 h-0.5 rounded-full" />
                 <div className="flex gap-4 text-sm">
@@ -145,7 +145,7 @@ export default function AddStudent() {
 
             {/* right */}
             <section className="flex flex-col gap-4 flex-1">
-              <div className="rounded-xl bg-white border w-full p-4 flex flex-col gap-2">
+              <div className="rounded-xl bg-card border w-full p-4 flex flex-col gap-2">
                 <p>Login/Account Details</p>
                 <div className="bg-neutral-300 h-0.5 rounded-full" />
                 <div className="flex gap-4 text-sm">
@@ -161,7 +161,7 @@ export default function AddStudent() {
                 </div>
               </div>
 
-              <div className="rounded-xl bg-white border w-full p-4 flex flex-col gap-2">
+              <div className="rounded-xl bg-card border w-full p-4 flex flex-col gap-2">
                 <p>Contact Information</p>
                 <div className="bg-neutral-300 h-0.5 rounded-full" />
                 <div className="flex flex-col gap-4 text-sm">
