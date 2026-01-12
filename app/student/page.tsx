@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { students } from "../../data";
+import { students } from "../data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export default async function Student({ params }: { params: { id: string } }) {
-  const { id } = await params;
+export default function Student() {
   // const res = await fetch("http://localhost:3000/api/students");
   // const students = await res.json();
   // console.log(students);

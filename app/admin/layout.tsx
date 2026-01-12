@@ -2,8 +2,12 @@ import { Bell, ChevronDown, MessageSquare, Search } from "lucide-react";
 import Navbar from "./components/nav";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { requireRole } from "@/lib/requireRole";
+import { auth } from "@/auth";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  await requireRole("ADMIN");
+  const session = await auth();
   return (
     <div className="flex h-screen overflow-hidden">
       <Navbar />
@@ -34,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <AvatarFallback>PL</AvatarFallback>
                   </Avatar>
                   <div className="text-sm">
-                    <p className="font-medium">Dorcas Midalla</p>
+                    <p className="font-medium">{session?.user.name}</p>
                     <p className="text-xs text-muted-foreground">Admin</p>
                   </div>
                   <ChevronDown className="w-4 h-4 text-muted-foreground" />
